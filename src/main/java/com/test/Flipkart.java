@@ -20,8 +20,8 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 public class Flipkart 
 {
 	private AndroidDriver driver;
-	
-	
+
+
 	@BeforeMethod
 	public void setUp() throws MalformedURLException {
 		DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
@@ -40,8 +40,8 @@ public class Flipkart
 		driver = new AndroidDriver<MobileElement>(remoteUrl, desiredCapabilities);
 	}
 
-	
-	
+
+
 	@Test
 	public void sampleTest() throws Exception 
 	{
@@ -49,7 +49,7 @@ public class Flipkart
 		MobileElement language= (MobileElement) driver.findElementByXPath("//hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.LinearLayout[1]/androidx.recyclerview.widget.RecyclerView/android.widget.RelativeLayout[4]/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.TextView[2]\r\n"
 				);
 		language.click();
-		
+
 		driver.findElementById("com.flipkart.android:id/select_btn").click();
 
 		//driver.findElementById("com.flipkart.android:id/button").click();
@@ -58,9 +58,11 @@ public class Flipkart
 		driver.findElementById("com.flipkart.android:id/search_widget_textbox").click();
 		MobileElement searchtext = (MobileElement) driver.findElementByAccessibilityId("Search grocery products");
 		searchtext.sendKeys("samsung phones");
-		try {
+		try 
+		{
 			Thread.sleep(5000);
-		} catch (InterruptedException e) {
+		} catch (InterruptedException e)
+		{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -80,7 +82,7 @@ public class Flipkart
 	}
 
 
-	
+
 	@AfterMethod
 	public void tearDown()
 	{
